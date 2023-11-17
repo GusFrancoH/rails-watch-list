@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def new
@@ -13,8 +13,8 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @restaurant.save
-    redirect_to list_path
+    @list.save
+    redirect_to list_path(@list)
   end
 
   private

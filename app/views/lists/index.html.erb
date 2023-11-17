@@ -1,5 +1,11 @@
+<div class="banner">
+<h1>Here are your lists!</h1>
+</div>
 <ul>
-  <% @list.each do |l| %>
-    <li><%= l.name %></li>
+  <% @lists.each do |l| %>
+    <li><%= link_to l.name, list_path(l) %></li>
   <% end %>
 </ul>
+
+
+<%= link_to 'Add a new list', new_list_path, class:'btn btn-success' %>
